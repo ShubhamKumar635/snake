@@ -254,6 +254,23 @@
       }
     });
 
+    // Mobile control buttons
+    document.getElementById('upBtn').addEventListener('click', () => {
+      if (direction.y === 0) direction = {x: 0, y: -gridSize};
+    });
+
+    document.getElementById('downBtn').addEventListener('click', () => {
+      if (direction.y === 0) direction = {x: 0, y: gridSize};
+    });
+
+    document.getElementById('leftBtn').addEventListener('click', () => {
+      if (direction.x === 0) direction = {x: -gridSize, y: 0};
+    });
+
+    document.getElementById('rightBtn').addEventListener('click', () => {
+      if (direction.x === 0) direction = {x: gridSize, y: 0};
+    });
+
     createFood();
     draw();
     intervalId = setInterval(move, speed);
